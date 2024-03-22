@@ -1,82 +1,84 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>BarcoProject</Text>
-      </View>
-      <View style={styles.main}>
-        <View style={[styles.imageContainer, {marginTop: 100}]}>
-          <Image
-            source={require('./assets/barco.jpeg')}
-            style={styles.barcoImage}
-          />
+      <ImageBackground source={require('./assets/ocean.jpg')} style={styles.backgroundImage}>
+        <View style={styles.overlay}>
+          <View style={styles.header}>
+            <Text style={styles.headerText}>Ocean Jasper</Text>
+          </View>
+          <View style={styles.main}>
+            <View style={[styles.imageContainer, {marginTop: 100}]}>
+              <Image
+                source={require('./assets/Barco.png')}
+                style={styles.barcoImage}
+              />
+            </View>
+            <View style={styles.chartContainer}>
+              <BarChart
+                data={{
+                  labels: ['Nivel de turbidez'],
+                  datasets: [
+                    {
+                      data: [90, 45, 190, 267, 300,],
+                    },
+                  ],
+                }}
+                width={300}
+                height={220}
+                yAxisLabel={''}
+                chartConfig={{
+                  backgroundColor: '#e26a00',
+                  backgroundGradientFrom: '#fb8c00',
+                  backgroundGradientTo: '#ffa726',
+                  decimalPlaces: 2,
+                  color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                  labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                  style: {
+                    borderRadius: 8,
+                  },
+                }}
+                style={{
+                  marginVertical: 2,
+                  borderRadius: 4,
+                }}
+              />
+            </View>
+          </View>
+          <View style={styles.controls}>
+            <View style={styles.row}>
+              <View style={styles.middleButton}></View>
+              <TouchableOpacity style={styles.circularButton}>
+                <Text style={styles.buttonText}>↑</Text>
+              </TouchableOpacity>
+              <View style={styles.middleButton}></View>
+            </View>
+            <View style={styles.row}>
+              <TouchableOpacity style={styles.circularButton}>
+                <Text style={styles.buttonText}>←</Text>
+              </TouchableOpacity>
+              <View style={styles.middleButton}></View>
+              <TouchableOpacity style={styles.circularButton}>
+                <Text style={styles.buttonText}>→</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.row}>
+              <View style={styles.middleButton}></View>
+              <TouchableOpacity style={styles.circularButton}>
+                <Text style={styles.buttonText}>↓</Text>
+              </TouchableOpacity>
+              <View style={styles.middleButton}></View>
+            </View>
+          </View>
+          
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>&copy; 2024 Ocean Jasper. Todos los derechos reservados.</Text>
+          </View>
         </View>
-        <View style={styles.chartContainer}>
-          <BarChart
-            data={{
-              labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-              datasets: [
-                {
-                  data: [20, 45, 28, 80, 99, 43],
-                },
-              ],
-            }}
-            width={300}
-            height={220}
-            yAxisLabel={'$'}
-            chartConfig={{
-              backgroundColor: '#e26a00',
-              backgroundGradientFrom: '#fb8c00',
-              backgroundGradientTo: '#ffa726',
-              decimalPlaces: 2,
-              color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-              labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-              style: {
-                borderRadius: 8,
-              },
-            }}
-            style={{
-              marginVertical: 2,
-              borderRadius: 4,
-            }}
-          />
-        </View>
-      </View>
-      <View style={styles.controls}>
-        <View style={styles.row}>
-          <View style={styles.middleButton}></View>
-          <TouchableOpacity style={styles.circularButton}>
-            <Text style={styles.buttonText}>↑</Text>
-          </TouchableOpacity>
-          <View style={styles.middleButton}></View>
-        </View>
-        <View style={styles.row}>
-          <TouchableOpacity style={styles.circularButton}>
-            <Text style={styles.buttonText}>←</Text>
-          </TouchableOpacity>
-          <View style={styles.middleButton}></View>
-          <TouchableOpacity style={styles.circularButton}>
-            <Text style={styles.buttonText}>→</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.row}>
-          <View style={styles.middleButton}></View>
-          <TouchableOpacity style={styles.circularButton}>
-            <Text style={styles.buttonText}>↓</Text>
-          </TouchableOpacity>
-          <View style={styles.middleButton}></View>
-        </View>
-      </View>
-      <View style={styles.button}>
-        <Button title="Ir a la Gráfica" onPress={() => { }} />
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>&copy; 2024 BarcoProject. Todos los derechos reservados.</Text>
-      </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -84,7 +86,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)', // Añade un fondo oscuro transparente para que el texto sea legible
   },
   header: {
     backgroundColor: '#35424a',
@@ -161,3 +171,4 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
 });
+
