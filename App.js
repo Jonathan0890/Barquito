@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
         <Text style={styles.headerText}>BarcoProject</Text>
       </View>
       <View style={styles.main}>
-        <View style={[styles.imageContainer, {marginTop: 85}]}>
+        <View style={[styles.imageContainer, {marginTop: 100}]}>
           <Image
             source={require('./assets/barco.jpeg')}
             style={styles.barcoImage}
@@ -47,22 +47,28 @@ export default function App() {
         </View>
       </View>
       <View style={styles.controls}>
-        <View style={styles.circle}>
-          <View style={styles.row}>
-            <View style={styles.middleButton}></View>
-            <Button title="↑" onPress={() => { }} />
-            <View style={styles.middleButton}></View>
-          </View>
-          <View style={styles.row}>
-            <Button title="←" onPress={() => { }} />
-            <View style={styles.middleButton}></View>
-            <Button title="→" onPress={() => { }} />
-          </View>
-          <View style={styles.row}>
-            <View style={styles.middleButton}></View>
-            <Button title="↓" onPress={() => { }} />
-            <View style={styles.middleButton}></View>
-          </View>
+        <View style={styles.row}>
+          <View style={styles.middleButton}></View>
+          <TouchableOpacity style={styles.circularButton}>
+            <Text style={styles.buttonText}>↑</Text>
+          </TouchableOpacity>
+          <View style={styles.middleButton}></View>
+        </View>
+        <View style={styles.row}>
+          <TouchableOpacity style={styles.circularButton}>
+            <Text style={styles.buttonText}>←</Text>
+          </TouchableOpacity>
+          <View style={styles.middleButton}></View>
+          <TouchableOpacity style={styles.circularButton}>
+            <Text style={styles.buttonText}>→</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.row}>
+          <View style={styles.middleButton}></View>
+          <TouchableOpacity style={styles.circularButton}>
+            <Text style={styles.buttonText}>↓</Text>
+          </TouchableOpacity>
+          <View style={styles.middleButton}></View>
         </View>
       </View>
       <View style={styles.button}>
@@ -93,10 +99,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20, // Añadimos margen inferior
+    marginBottom: 10, // Añadimos margen inferior
   },
   imageContainer: {
-    marginBottom: 20,
+    marginBottom: 10,
   },
   barcoImage: {
     width: 100,
@@ -104,11 +110,11 @@ const styles = StyleSheet.create({
   },
   chartContainer: {
     width: '70%',
-    marginBottom: 20, // Añadimos margen inferior
+    marginBottom: 40, // Añadimos margen inferior
   },
   footer: {
     backgroundColor: '#35424a',
-    paddingVertical: 20,
+    paddingVertical: 10,
     alignItems: 'center',
   },
   footerText: {
@@ -119,12 +125,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 20,
     alignItems: 'center',
+    marginTop: 20,
   },
   circle: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 200,
-    height: 200,
+    width: 150,
+    height: 150,
     borderRadius: 100,
     borderWidth: 2,
     borderColor: 'black',
@@ -141,5 +148,16 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
-  }
+  },
+  circularButton: {
+    width: 60,
+    height: 60,
+    borderRadius: 40,
+    backgroundColor: 'lightblue',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontSize: 24,
+  },
 });
