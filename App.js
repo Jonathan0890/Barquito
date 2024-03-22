@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 
-export default function App() {
+
+const App = ({navigation}) => {
   return (
     <ImageBackground source={require('./assets/ocean.jpg')} style={styles.backgroundImage}>
       <View style={styles.container}>
@@ -37,10 +38,13 @@ export default function App() {
         <TouchableOpacity style={styles.StopButton} onPress={() => navigation.navigate('Details')}>
           <Text style={styles.saveButtonText}>Detener</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.GraphButton} onPress={() => navigation.navigate('Details')}>
+        <TouchableOpacity style={styles.GraphButton} onPress={() => navigation.navigate('Graph')}>
           <Text style={styles.saveButtonText}>Gráfica  </Text>
         </TouchableOpacity>
       </View>
+
+    
+
     </ImageBackground>
   );
 }
@@ -109,3 +113,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+export default App;
