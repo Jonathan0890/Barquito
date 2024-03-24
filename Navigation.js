@@ -26,7 +26,7 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
     // <Tab.Screen name="Ejemplo" component={Ejemplo} />
     /* Es para las rutas en la parte de abajo de la pantalla 
-       tabActiveTintColor: "green" es donde estoy actualizando se coloca de un color verde
+    tabActiveTintColor: "green" es donde estoy actualizando se coloca de un color verde
        */
     return (
         <Tab.Navigator
