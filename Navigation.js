@@ -8,6 +8,13 @@ import SettingsScreen from "./screen/SettingsScreen";
 import GraficaScreen from "./screen/GraficaScreen";
 import StackScreen from "./screen/StackScreen";
 import HomeScreen from "./screen/HomeScreen";
+import ButonScreen from "./screen/ButonScreen";
+
+//Icons 
+import { FontAwesome } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const HomeStackNavigator = createStackNavigator();
 function MyStack() {
@@ -30,21 +37,41 @@ function MyTabs() {
        */
     return (
         <Tab.Navigator
-        initialRouteName="Home"
+            initialRouteName="Home"
             screenOptions={{
-                tabBarActiveTintColor: "green"
+                tabBarActiveTintColor: "blue"
             }}>
             <Tab.Screen name="Settings" component={SettingsScreen}
                 options={{
-                    tabBarIcon: ({ color, size }) => {
-
-                    },
+                    tabBarIcon: ({ color, size }) => (
+                        <Feather name="settings" size={size} color={color}/>),
                     headerShown: false
                 }} />
             <Tab.Screen name="Grafic" component={GraficaScreen}
-                options={{ headerShown: false }} />
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <Octicons name="graph" size={size} color={color} />
+                    ),
+                    headerShown: false
+                }}
+            />
             <Tab.Screen name="Home" component={MyStack}
-                options={{ headerShown: false }} />
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <FontAwesome name="home" size={size} color={color} />
+
+                    ),
+                    headerShown: false
+                }}
+            />
+            <Tab.Screen name="Direcciones" component={ButonScreen}
+                options={{
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="google-controller" size={size} color={color} />
+                    ),
+                    headerShown: false
+                }}
+            />
         </Tab.Navigator>
     );
 }
