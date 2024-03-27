@@ -47,7 +47,7 @@ function MyTabs() {
                         <Feather name="settings" size={size} color={color}/>),
                     headerShown: false
                 }} />
-            <Tab.Screen name="Grafic" component={GraficaScreen}
+            <Tab.Screen name="Gráfica" component={GraficaScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Octicons name="graph" size={size} color={color} />
@@ -55,7 +55,7 @@ function MyTabs() {
                     headerShown: false
                 }}
             />
-            <Tab.Screen name="Home" component={MyStack}
+            <Tab.Screen name="Inicio" component={MyStack}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <FontAwesome name="home" size={size} color={color} />
@@ -64,7 +64,7 @@ function MyTabs() {
                     headerShown: false
                 }}
             />
-            <Tab.Screen name="Direcciones" component={ButonScreen}
+            <Tab.Screen name="Control" component={ButonScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="google-controller" size={size} color={color} />
