@@ -4,9 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 // Screens   ignorar el error si aparece no afecta a nada 
-import SettingsScreen from "./screen/SettingsScreen";
+
 import GraficaScreen from "./screen/GraficaScreen";
 import StackScreen from "./screen/StackScreen";
+import VisionScreen from "./screen/VisionScreen";
+import MisionScreen from "./screen/MisionScreen";
 import HomeScreen from "./screen/HomeScreen";
 import ButonScreen from "./screen/ButonScreen";
 
@@ -25,6 +27,10 @@ function MyStack() {
                 options={{ headerShown: false }} />
             <HomeStackNavigator.Screen name="Stack" component={StackScreen}
                 options={{ headerBackTitleVisible: false }} />
+            <HomeStackNavigator.Screen name="Vision" component={VisionScreen}
+                options={{ headerBackTitleVisible: false }} />
+            <HomeStackNavigator.Screen name="Mision" component={MisionScreen}
+                options={{ headerBackTitleVisible: false }} />
         </HomeStackNavigator.Navigator>
     )
 }
@@ -41,12 +47,7 @@ function MyTabs() {
             screenOptions={{
                 tabBarActiveTintColor: "blue"
             }}>
-            <Tab.Screen name="Settings" component={SettingsScreen}
-                options={{
-                    tabBarIcon: ({ color, size }) => (
-                        <Feather name="settings" size={size} color={color}/>),
-                    headerShown: false
-                }} />
+            
             <Tab.Screen name="Gráfica" component={GraficaScreen}
                 options={{
                     tabBarIcon: ({ color, size }) => (

@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-const StackScreen = () => {
+const MisionScreen = () => {
     const navigation = useNavigation();
     return (
         <ImageBackground source={require('../assets/ocean.jpg')} style={styles.container}>
-            <Text style={styles.title}>Objetivo</Text>
-            <Text style={styles.body}>Ocean Jasper aborda la problemática de la calidad pobre en el agua, proporcionando una forma de monitorearla y ayudar significativamente a prevenir la contaminación del agua.</Text>
+            <Text style={styles.title}>Nuestra misión</Text>
+            <Text style={styles.body}>Contribuir a la preservación y mejora de la calidad del agua, mediante el desarrollo e implementación de un barco que proporcione datos precisos sobre la calidad del agua.</Text>
             
         </ImageBackground>
     );
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
         color: "white",
     },
 });
-export default StackScreen;
+export default MisionScreen;

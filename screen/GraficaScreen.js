@@ -28,8 +28,8 @@ const GraficaScreen = () => {
                             yAxisLabel={''}
                             chartConfig={{
                                 backgroundColor: '#e26a00',
-                                backgroundGradientFrom: '#fb8c00',
-                                backgroundGradientTo: '#ffa726',
+                                backgroundGradientFrom: '#124076',
+                                backgroundGradientTo: '#124076',
                                 decimalPlaces: 2,
                                 color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                                 labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,

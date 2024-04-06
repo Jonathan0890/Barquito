@@ -73,9 +73,12 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 40,
-        backgroundColor: 'lightblue',
+        backgroundColor: 'darkblue',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    buttonText:{
+        color: 'white' ,
     },
     backgroundImage: {
         flex: 1,

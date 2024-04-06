@@ -13,6 +13,16 @@ const HomeScreen = () => {
                 style={styles.button}>
                 <Text style={styles.buttonText}>Objetivo</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Vision")}
+                style={styles.button}>
+                <Text style={styles.buttonText}>Visión</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Mision")}
+                style={styles.button}>
+                <Text style={styles.buttonText}>Misión</Text>
+            </TouchableOpacity>
         </ImageBackground>
     );
 }
@@ -27,26 +37,26 @@ const styles = StyleSheet.create({
         fontSize: 30,
         textAlign: "center",
         marginTop: "20%",
-        color: "white",
+        color: "darkblue",
         fontWeight: "bold",
     },
     body: {
         fontSize: 20,
         textAlign: "center",
         marginTop: "20%",
-        color: "white",
+        color: "black",
         fontWeight: "bold",
     },
     button: {
         marginTop: 40,
         width: "50%",
-        backgroundColor: "blue",
+        backgroundColor: "darkblue",
         padding: 10,
         borderRadius: 10,
         alignSelf: "center",
     },
     buttonText: {
-        fontSize: 30,
+        fontSize: 20,
         textAlign: "center",
         color: "white",
     },
