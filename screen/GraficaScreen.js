@@ -28,11 +28,11 @@ const GraficaScreen = () => {
                             yAxisLabel={''}
                             chartConfig={{
                                 backgroundColor: '#e26a00',
-                                backgroundGradientFrom: '#124076',
-                                backgroundGradientTo: '#124076',
+                                backgroundGradientFrom: '#B9FFF8',
+                                backgroundGradientTo: '#B9FFF8',
                                 decimalPlaces: 2,
-                                color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                                labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                                labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                                 style: {
                                     borderRadius: 8,
                                 },
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         marginBottom: 10, // Añadimos margen inferior
     },
     imageContainer: {
-        marginBottom: 80,
+        marginBottom: 90,
     },
     chartContainer: {
         width: '70%',
